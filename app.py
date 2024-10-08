@@ -34,3 +34,7 @@ def onDisconnect():
 @socketio.event
 def test():
     send(request.sid)
+
+@socketio.on_error_default  # handles all namespaces without an explicit error handler
+def default_error_handler(e):
+    print(e)
