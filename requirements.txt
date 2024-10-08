@@ -3,3 +3,5 @@ flask
 flask-sock
 simple-websocket
 Gunicorn
+redis
+flask-socketio
