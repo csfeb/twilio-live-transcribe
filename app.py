@@ -15,6 +15,10 @@ r = redis.from_url(os.environ['REDIS_URL'])
 CL = '\x1b[0K'
 BS = '\x08'
 
+@app.route("/")
+def hello():
+    return 'Hello, World!'
+
 @socketio.on('connect')
 def onConnect():
     print('connect', request)
