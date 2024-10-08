@@ -32,8 +32,3 @@ def onDisconnect():
     print('disconnect', request.sid)
     r.srem('conn', request.sid)
     send({'state': 'Disconnected', 'sid': request.sid})
-
-if __name__ == '__main__':
-    print('Starting server...')
-    socketio.run(app)
-    print('Started server.')
