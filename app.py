@@ -16,6 +16,10 @@ CL = '\x1b[0K'
 BS = '\x08'
 
 
+@app.route('/', methods=['GET'])
+def home():
+    return 'Hello, World!'
+
 @sock.route('/stream')
 def stream(ws):
     @sock.route('/stream')

@@ -3,3 +3,4 @@ vosk
 flask
 flask-sock
 simple-websocket
+Gunicorn
