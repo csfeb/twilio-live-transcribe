@@ -22,8 +22,6 @@ def home():
 
 @sock.route('/stream')
 def stream(ws):
-    @sock.route('/stream')
-def stream(ws):
     """Receive and transcribe audio stream."""
     rec = vosk.KaldiRecognizer(model, 16000)
     while True:
