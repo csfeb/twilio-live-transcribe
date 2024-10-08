@@ -8,7 +8,7 @@ import vosk
 import redis
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*", logger=True, engineio_logger=True)
 model = vosk.Model('model')
 r = redis.from_url(os.environ['REDIS_URL'])
 
@@ -24,11 +24,13 @@ def onConnect():
     print('connect', request)
     print('connect', request.sid)
     r.sadd('conn', request.sid)
-    send({'state': 'Connected', 'sid': request.sid})
 
 @socketio.on('disconnect')
 def onDisconnect():
     print('disconnect', request)
     print('disconnect', request.sid)
     r.srem('conn', request.sid)
-    send({'state': 'Disconnected', 'sid': request.sid})
+
+@socketio.event
+def test():
+    send(request.sid)
