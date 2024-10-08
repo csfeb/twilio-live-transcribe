@@ -5,3 +5,4 @@ simple-websocket
 Gunicorn
 redis
 flask-socketio
+gevent
