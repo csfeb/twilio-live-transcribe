@@ -1,4 +1,3 @@
-twilio
 vosk
 flask
 flask-sock

@@ -4,12 +4,10 @@ import json
 import os
 from flask import Flask, request
 from flask_sock import Sock, ConnectionClosed
-from twilio.rest import Client
 import vosk
 
 app = Flask(__name__)
 sock = Sock(app)
-twilio_client = Client()
 model = vosk.Model('model')
 
 CL = '\x1b[0K'
