@@ -1,0 +1,5 @@
+twilio
+vosk
+flask
+flask-sock
+simple-websocket
